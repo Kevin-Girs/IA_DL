@@ -1,0 +1,103 @@
+# Deep Learning AI System in Python (Object-Oriented) by Kevin Girs.
+
+## Introduction
+This project is a Python-based **Deep Learning Artificial Intelligence system** developed using **Object-Oriented Programming (OOP) principles**. The aim of the project is to provide a flexible, scalable, and modular framework for building and experimenting with deep learning models.
+
+## Key Features
+- **Object-Oriented Design**: The project leverages OOP to create clean, reusable, and maintainable code. Each major component of the AI system is encapsulated within dedicated classes.
+- **Deep Learning Architecture**: The system supports custom neural network architectures using popular Python libraries (numpy, matplotlib).
+- **Modular Structure**: Easily extend and modify components like the neural network layers.
+
+## Project Structure
+```
+DL_IA_FS/
+    ├── src/
+        ├── models/            
+        ├── controllers/      
+        ├── views/            
+        ├── tools/         
+    ├── README.md             
+    ├── requirements.txt       
+```
+
+## Getting Started
+
+### Prerequisites
+Ensure you have Python 3.12 or above installed, along with the necessary libraries:
+- `NumPy`
+- `Matplotlib`
+
+You can install the required libraries using:
+```bash
+pip install -r requirements.txt
+```
+
+Here’s the updated **Usage** section in English, reflecting your `main.py` script:
+
+### Usage
+
+1. **Data Preparation**:  
+   Customize your dataset by modifying the input and output data in the main script. For example, in `main.py`:
+   ```python
+   __inputs = [
+       [0,0],
+       [0,1],
+       [1,0],
+       [1,1]
+   ]
+
+   __outputs = [
+       [1],
+       [0],
+       [0],
+       [1]
+   ]
+   ```
+
+2. **Model Configuration**:  
+   Define your neural network architecture using the `__layers` variable. For instance, the following configuration sets up a network with three layers (input with 2 neurons, a hidden layer with 7 neurons, and an output with 1 neuron):
+   ```python
+   __layers = [2, 7, 1]
+   ```
+
+3. **Training**:  
+   Train the model directly in the main script by creating an instance of `IAController`, passing the layers, input/output data, and the number of iterations:
+   ```python
+   __IAController = IAController(layers=__layers, inputs_FT=__inputs, outputs_FT=__outputs, nb_iter_FT=__nb_iter, inputs_test=__inputs_test)
+   ```
+
+   You can adjust the number of iterations (`__nb_iter`) to fine-tune the training process:
+   ```python
+   __nb_iter = 10000
+   ```
+
+4. **Evaluation**:  
+   After training, the model is evaluated on a predefined test set:
+   ```python
+   __inputs_test = [
+       [0,1],
+       [1,0],
+       [0,0],
+       [1,1]
+   ]
+   ```
+
+   You can modify the test data and check the model’s performance by updating the `inputs_test` values.
+
+### Running the Program
+To run the training and evaluation of the model, simply execute the `main.py` script:
+```bash
+python main.py
+```
+
+### Customization
+The system is designed to be modular, allowing easy customization of:
+- Neural network architectures
+- Loss functions
+- Optimizers
+- Data pipelines
+
+You can extend any class or method in the codebase to suit your specific use case.
+
+
+
